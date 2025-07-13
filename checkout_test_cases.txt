@@ -17,3 +17,15 @@ Expected Result:
   - The item is added to the cart.
   - Cart icon count increases by 1.
 
+---
+
+TC02: Verify coupon can be applied to the cart
+Description: Ensure a valid coupon code can be applied to reduce the cart total.
+Steps:
+  1. Add an item to the cart.
+  2. Go to the cart page.
+  3. Enter a valid coupon code in the 'Coupon' field.
+  4. Click 'Apply'.
+Expected Result:
+  - Discount is applied to the order total.
+  - A success message appears: "Coupon applied successfully."
