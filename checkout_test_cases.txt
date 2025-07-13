@@ -29,3 +29,45 @@ Steps:
 Expected Result:
   - Discount is applied to the order total.
   - A success message appears: "Coupon applied successfully."
+
+
+---
+
+TC03: Verify checkout with invalid payment details fails
+Description: Ensure checkout fails when invalid payment details are provided.
+Steps:
+  1. Add an item to the cart.
+  2. Proceed to checkout.
+  3. Enter valid shipping information.
+  4. Enter invalid payment details (e.g., incorrect card number).
+  5. Click 'Place Order'.
+Expected Result:
+  - Order is not placed.
+  - An error message is shown: "Payment failed. Please check your card details."
+
+---
+
+TC04: Verify successful order placement with valid details
+Description: Ensure a user can complete checkout with valid shipping and payment details.
+Steps:
+  1. Add an item to the cart.
+  2. Proceed to checkout.
+  3. Enter valid shipping and payment details.
+  4. Click 'Place Order'.
+Expected Result:
+  - User is redirected to an order confirmation page.
+  - A message is displayed: "Thank you for your purchase!"
+  - Confirmation email is sent.
+
+---
+
+TC05: Verify quantity update in the cart updates total
+Description: Ensure updating the item quantity in the cart reflects correctly in the total.
+Steps:
+  1. Add an item to the cart.
+  2. Go to the cart page.
+  3. Change the quantity from 1 to 3.
+  4. Click 'Update Cart'.
+Expected Result:
+  - Cart total updates to reflect the new quantity.
+  - Line item subtotal and overall total increase correctly.
