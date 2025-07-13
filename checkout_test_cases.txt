@@ -4,4 +4,3 @@ Assignment:
 - Include: Test ID, description, steps, expected result.  
 - Save as a text file in a GitHub repo named “QA-Basics.”  
 - Example: “TC01: Verify item can be added to cart. Steps: 1. Navigate to product page, 2. Click ‘Add to Cart.’ Expected: Item appears in cart.”
-
