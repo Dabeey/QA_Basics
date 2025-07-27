@@ -1,0 +1,1 @@
+print('Hello, world! \n I am YFBG \n And i love you')

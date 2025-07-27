@@ -1,0 +1,10 @@
+{
+  "python.defaultInterpreterPath": "/home/dabeey/projects/QA Automation/venv/bin/python3",
+  "python.pythonPath": "/home/dabeey/projects/QA Automation/venv/bin/python3",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "python.terminal.activateEnvironment": true,
+  "code-runner.executorMap": {
+    "python": "python3 -u"
+  },
+  "code-runner.runInTerminal": true
+}
