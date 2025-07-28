@@ -58,7 +58,7 @@ def test_login():
             EC.visibility_of_element_located((By.ID, 'flash'))
         )
         if 'You logged into a secure area!' in flash.text:
-            print('Successful and secure Login. ')
+            print('Successful and secure Login.!!! Welcome Aboard!!! ')
         else:
             print('Login not secure. Please try again.')
 
