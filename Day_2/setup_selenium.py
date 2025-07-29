@@ -2,6 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 import time
 
 print('Setting up Selenium WebDriver automatically...')
@@ -21,7 +24,11 @@ def setup_selenium():
     search_box.send_keys('Get It Done!')
     search_box.submit()
 
-    time.sleep(2)
+    # time.sleep(2)
+    
+    # Wait until the title contains the search term
+    WebDriverWait(driver, 10).until(EC.title_contains("Get It Done!"))
+   
     title = driver.title
     print(f'DRIVER TITLE: \n {title}') # Print the title of the page to confirm it loaded correctly
 
