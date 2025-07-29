@@ -20,9 +20,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-    driver.get("https://the-internet.herokuapp.com/login")
+    driver.get("https://the-internet.herokuapp.com/login") #Before yielding
     yield driver
-    driver.quit()
+    driver.quit() #After yielding
 
 
 # ✅ Test 1: Valid Login
@@ -31,6 +31,7 @@ def test_valid_login(driver):
         driver.find_element(By.ID, "username").send_keys("tomsmith")
         driver.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
         driver.find_element(By.CSS_SELECTOR, "button.radius").click()
+        print('Username and Password found successfully.')
 
         message = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.ID, "flash"))
@@ -83,5 +84,4 @@ def take_screenshot(driver, filename):
 
 
 if __name__ == '__main__':
-    pytest.main(["-v", __file__])
-# Run this script with pytest -v to see the results of the tests.
+    pytest.main(["-v", __file__]) # Run this script with pytest -v to see the results of the tests.
