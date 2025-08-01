@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "3e76c69a-c349-475d-9efc-07917b21330c",
+		"name": "Day 8 - Automating API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43173975"
+	},
+	"item": [
+		{
+			"name": "Automate Specific Info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response JSON\r",
+							"const res = pm.response.json();\r",
+							"\r",
+							"// Check status code\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Check for a specific field\r",
+							"pm.test(\"Email is correct\", () => {\r",
+							"    pm.expect(res.data.email).to.eql(\"janet.weaver@reqres.in\");\r",
+							"});\r",
+							"\r",
+							"// Check if ID exists\r",
+							"pm.test(\"ID exists\", () => {\r",
+							"    pm.expect(res.data).to.have.property(\"id\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Store and Reuse Data Using Variables\r",
+							"const res = pm.response.json();\r",
+							"pm.environment.set(\"userId\", res.data.id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "reqres-free-v1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/{{userId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
