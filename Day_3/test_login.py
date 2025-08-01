@@ -44,8 +44,8 @@ def test_login():
         password_input = driver.find_element(By.ID, 'password')
         print('Username and password fields found successfully.')
 
-        username_input.send_keys('tomsmith')
-        password_input.send_keys('SuperSecretPassword!')
+        username_input.send_keys('tomsmith').send_keys('SuperSecretPassword!')
+        password_input
         print('Username and password entered successfully.')
 
         # 3. Click login
