@@ -36,6 +36,7 @@ def set_up():
     
 
 def test_open_page():
+    # Open Page
     driver = set_up()
     result = ""
     if driver is None:
@@ -58,6 +59,7 @@ def test_open_page():
     return result
 
 
+# run script file
 if __name__ == '__main__':
     set_up()
     test_open_page()
