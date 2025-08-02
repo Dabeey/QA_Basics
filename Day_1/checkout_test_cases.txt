@@ -8,6 +8,7 @@ Assignment:
 
 # QA-Basics - Checkout Process Test Cases
 
+
 TC01: Verify item can be added to cart
 Description: Ensure a user can successfully add a product to the shopping cart.
 Steps:
@@ -17,7 +18,9 @@ Expected Result:
   - The item is added to the cart.
   - Cart icon count increases by 1.
 
+
 ---
+
 
 TC02: Verify coupon can be applied to the cart
 Description: Ensure a valid coupon code can be applied to reduce the cart total.
@@ -33,6 +36,7 @@ Expected Result:
 
 ---
 
+
 TC03: Verify checkout with invalid payment details fails
 Description: Ensure checkout fails when invalid payment details are provided.
 Steps:
@@ -45,7 +49,9 @@ Expected Result:
   - Order is not placed.
   - An error message is shown: "Payment failed. Please check your card details."
 
+
 ---
+
 
 TC04: Verify successful order placement with valid details
 Description: Ensure a user can complete checkout with valid shipping and payment details.
@@ -59,7 +65,9 @@ Expected Result:
   - A message is displayed: "Thank you for your purchase!"
   - Confirmation email is sent.
 
+
 ---
+
 
 TC05: Verify quantity update in the cart updates total
 Description: Ensure updating the item quantity in the cart reflects correctly in the total.
