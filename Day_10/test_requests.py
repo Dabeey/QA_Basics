@@ -22,10 +22,18 @@ def test_login():
     "password": "cityslicka"
     }
 
-    res = requests.post(URL + '/login',json=payload)
+    res = requests.post(URL + '/login',json=payload,
+                        headers={'x-api-key':'reqres-free-v1'})
+    print(f'Status Code: {res.status_code}')
     assert res.status_code == 200, f'Expected 200 as status code'
     assert 'token' in res.json(), 'Expected a token in the response'
     data = res.json()
     print(f'Test passed: Login successful with token {data["token"]}')
     return data
 
+if __name__ == '__main__':
+    print('Running API tests...')
+    test_url()
+    test_api()
+    test_login()
+    print('All tests completed successfully.')
