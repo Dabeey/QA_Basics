@@ -1,3 +1,6 @@
+// ///////////////// 🚨Get and Set Variables with Scripts ///////////////
+
+
 // Create global variable
 pm.globals.set('name', 'Dabeey');
 
@@ -48,5 +51,3 @@ let auth = pm.request.auth.bearer().get();
 
 // Remove Authorization
 pm.request.auth.bearer().unset();
-
-// 
